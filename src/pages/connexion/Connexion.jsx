@@ -22,6 +22,8 @@ export default function Connexion() {
     setMembers(jsonData);
   };
 
+console.log(members)
+
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
@@ -36,7 +38,7 @@ export default function Connexion() {
     );
 
     if (chercheMember) {
-      setStudents({ name: chercheMember[1], filiere: chercheMember[6] }); // Mettez à jour les données de l'utilisateur avec setStudents
+      setStudents({ name: chercheMember[1], filiere: chercheMember[8], status:1 }); // Mettez à jour les données de l'utilisateur avec setStudents
       navigate('/');
     } else {
       alert('Veuillez vérifier vos informations');

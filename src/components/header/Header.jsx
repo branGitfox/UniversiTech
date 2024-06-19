@@ -20,7 +20,7 @@ export default function Header() {
             </div>
           </div>
           <div className={`${s.deconnect}`}>
-            <LuLogOut size={25} />
+           {userData.status == 0?'Se connecter':<LuLogOut size={25} />} 
           </div>
         </div>
       </div>
