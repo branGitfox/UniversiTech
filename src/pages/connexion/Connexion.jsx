@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import s from "./connexion.module.css"
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
@@ -14,32 +14,44 @@ export default function Connexion() {
     const [inputs, setInputs] = useState({});
     const navigate = useNavigate();
 
+    const[members, setMembers] = useState()
+    const [students, setStudents] = useState()
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
         setInputs(values => ({ ...values, [name]: value }))
     }
 
+    useEffect(() => {
+        getUser()
+    }, [])
 
 
-    const handleSubmit = async (e) => {
+    const getUser = async () => {
+        const res = await fetch('http://localhost/api/index.php')
+        const jsonData = await res.json()
+        setMembers(jsonData)
+
+    }
+    console.log(members);
+
+    const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(`Email : ${inputs.email} ; Mot de passe : ${inputs.mot_de_passe}`);
+        console.log(`Email : ${inputs.email} ; Mot de passe : ${inputs.password}`);
 
-        try {
 
-            const res = await axios.get('https:/');
-            const members = res.data;
-            const chercheMember = members.find(member => member.email === inputs.email && member.mot_de_passe === inputs.password);
+            
+            const chercheMember = members.find(member => member.email === inputs.email && member.password === inputs.password);
 
+            console.log(chercheMember);
             if (chercheMember) {
-                navigate("/home");
+                setStudents({name: chercheMember[1], filiere: chercheMember[3]})
+                console.log(students);
+                navigate("/");
             } else {
                 alert("veuillez bien verifier votre information")
             }
-        } catch (error) {
-            console.error('Erreur l:', error);
-        }
+      
     };
 
 

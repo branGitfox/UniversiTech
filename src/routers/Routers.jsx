@@ -9,7 +9,7 @@ export default function Routers() {
       <Routes >
         {
           NavData.map((route, index) => (
-            <Route key={index} path={route.path} element={< route.page />} />))
+            <Route key={index} path={route.path} element={< route.page />} students = {students} />))
         }
       </Routes>
     </BrowserRouter>

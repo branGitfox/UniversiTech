@@ -25,11 +25,11 @@ export default function Inscription() {
     console.log(`Nom : ${inputs.name} ; Prenom : ${inputs.firstName} ; email : ${inputs.email} ; mot de passe : ${inputs.password} ; `);
 
     try {
-      const response = await axios.post('http://localhost/api/', inputs);
-      console.log('reponse ', response.data);
-      navigate("/connexion");
+      const response = await axios.post('http://localhost/api/', inputs)
+      console.log('reponse ', response.data)
+      navigate("/connexion")
     } catch (error) {
-      console.error('Erreur lors de la requête:', error);
+      console.error('Erreur lors de la requête:', error)
     }
 
   }
@@ -97,7 +97,7 @@ export default function Inscription() {
                   id="firstName"
                   type="text"
                   placeholder="Loic"
-                  name="firstName"
+                  name="firstname"
                   onChange={handleChange}
                   required
                 />
@@ -107,14 +107,14 @@ export default function Inscription() {
 
 
 
-            <div class="mb-6">
-              <label for="filière" class="block text-gray-700 text-sm font-bold mb-2">
+            <div className="mb-6">
+              <label for="filière" className="block text-gray-700 text-sm font-bold mb-2">
                 Filière
               </label>
               <select
                 className={`${s.filière} appearance-none w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
                 id="filière"
-                name="filière"
+                name="filiere"
                 onChange={handleChange}
                 required
               >
