@@ -1,58 +1,47 @@
-import React, { Fragment, useEffect, useState } from 'react'
-import s from "./connexion.module.css"
+import React, { Fragment, useContext, useEffect, useState } from 'react';
+import s from "./connexion.module.css";
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import Lottie from 'lottie-react';
 import test from "../../Lottie/8.json";
-
-
-import axios from 'axios';
+import UserContext from '../../hooks/UserProvider'; // Importez le contexte utilisateur
 
 export default function Connexion() {
+  const { setStudents } = useContext(UserContext); // Utilisez setStudents depuis le contexte
+  const navigate = useNavigate();
+  const [members, setMembers] = useState();
+  const [inputs, setInputs] = useState({});
 
+  useEffect(() => {
+    getUser();
+  }, []);
 
-    const [inputs, setInputs] = useState({});
-    const navigate = useNavigate();
+  const getUser = async () => {
+    const res = await fetch('http://localhost/api/index.php');
+    const jsonData = await res.json();
+    setMembers(jsonData);
+  };
 
-    const[members, setMembers] = useState()
-    const [students, setStudents] = useState()
-    const handleChange = (event) => {
-        const name = event.target.name;
-        const value = event.target.value;
-        setInputs(values => ({ ...values, [name]: value }))
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setInputs((values) => ({ ...values, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const chercheMember = members.find(
+      (member) =>
+        member.email === inputs.email && member.password === inputs.password
+    );
+
+    if (chercheMember) {
+      setStudents({ name: chercheMember[1], filiere: chercheMember[6] }); // Mettez à jour les données de l'utilisateur avec setStudents
+      navigate('/');
+    } else {
+      alert('Veuillez vérifier vos informations');
     }
-
-    useEffect(() => {
-        getUser()
-    }, [])
-
-
-    const getUser = async () => {
-        const res = await fetch('http://localhost/api/index.php')
-        const jsonData = await res.json()
-        setMembers(jsonData)
-
-    }
-    console.log(members);
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(`Email : ${inputs.email} ; Mot de passe : ${inputs.password}`);
-
-
-            
-            const chercheMember = members.find(member => member.email === inputs.email && member.password === inputs.password);
-
-            console.log(chercheMember);
-            if (chercheMember) {
-                setStudents({name: chercheMember[1], filiere: chercheMember[3]})
-                console.log(students);
-                navigate("/");
-            } else {
-                alert("veuillez bien verifier votre information")
-            }
-      
-    };
+  };
 
 
 
