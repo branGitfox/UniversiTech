@@ -45,24 +45,24 @@ export default function Inscription() {
 
         {/* Section gauche: grande photo */}
         <div className={`${s.sary} hidden md:block md:w-1/2 lottie-background`}>
-                    <div className={`${s.lotti}`}>
-                        <Lottie animationData={test} />
-                    </div>
+          <div className={`${s.lotti}`}>
+            <Lottie animationData={test} />
+          </div>
 
-                    <div className={`${s.text_parents}`}>
+          <div className={`${s.text_parents}`}>
 
-                        <h1 className={`${s.logo}  p-8  text-3xl  `}>UniversiTech</h1>
-                        <div className={`${s.text}  text-gr p-8 `}>
-                            <p>Connectez-vous pour accéder à tous vos outils Universitaire et à votre espace Universitaire Personnalisé en un seul endroit.</p>
+            <h1 className={`${s.logo}  p-8  text-3xl  `}>UniversiTech</h1>
+            <div className={`${s.text}  text-gr p-8 `}>
+              <p>Connectez-vous pour accéder à tous vos outils Universitaire et à votre espace Universitaire Personnalisé en un seul endroit.</p>
 
-                            <p>Votre passerelle vers une gestion académique sans stress</p>
+              <p>Votre passerelle vers une gestion académique sans stress</p>
 
-                            <p>Gagner du temps et rester avec à jour avec <span>UniversiTech</span> </p>
-                            <div />
-                        </div>
-                        
-                    </div>
-                </div>
+              <p>Gagner du temps et rester avec à jour avec <span>UniversiTech</span> </p>
+              <div />
+            </div>
+
+          </div>
+        </div>
 
 
         {/* Section droite: formulaire de login */}
@@ -107,19 +107,24 @@ export default function Inscription() {
 
 
 
-            <div className="mb-6">
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="filière">
+            <div class="mb-6">
+              <label for="filière" class="block text-gray-700 text-sm font-bold mb-2">
                 Filière
               </label>
-              <input
-                className={`${s.filière}  appearance-none  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+              <select
+                className={`${s.filière} appearance-none w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
                 id="filière"
-                type="text"
-                placeholder="IGGLIA"
                 name="filière"
                 onChange={handleChange}
                 required
-              />
+              >
+                <option value="1" selected>IGGLIA</option>
+                <option value="2" selected>TOUR</option>
+                <option value="3" selected>ESIIA</option>
+                <option value="4" selected>EMI</option>
+                <option value="5" selected>TOUR</option>
+            
+              </select>
             </div>
 
             <div className="flex mb-4">
