@@ -25,7 +25,7 @@ export default function Inscription() {
     console.log(`Nom : ${inputs.name} ; Prenom : ${inputs.firstName} ; email : ${inputs.email} ; mot de passe : ${inputs.password} ; `);
 
     try {
-      const response = await axios.post('http', inputs);
+      const response = await axios.post('http://localhost/api/', inputs);
       console.log('reponse ', response.data);
       navigate("/connexion");
     } catch (error) {
