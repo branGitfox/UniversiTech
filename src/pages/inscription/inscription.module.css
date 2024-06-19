@@ -1,0 +1,106 @@
+.screen {
+    height: 100vh;
+    justify-content: center;
+    background-color: #ffff;
+
+}
+
+.logo {
+    color: black;
+    font-weight: 700;
+}
+
+.lotti{
+    position: relative;
+}
+
+.text_parents{
+    position: absolute;
+}
+.sary {
+    /* background: url("../../../public/image/connexion/connexion.jpg") center center no-repeat; */
+    background-color: #ffd766;
+    background-size: cover;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.text {
+    font-size: 20px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 50%;
+}
+
+.droite {
+    position: relative;
+}
+
+.connexion {
+    color: black;
+}
+
+.mail,
+.password,
+.name,
+.firstName,
+.filière,
+.date,
+.tel,
+.matricule {
+    background-color: #f6f6f6;
+    border-radius: 2rem;
+}
+
+.seconnecter {
+    background-color: #ffd766;
+    border-radius: 2rem;
+    transition: 0.3s;
+}
+
+.seconnecter:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.link_inscription {
+    color: blueviolet;
+
+}
+
+.deco {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.deco2 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: none;
+}
+
+
+@media screen and (max-width:428px) {
+    .sary {
+        display: none;
+    }
+
+    .deco2 {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 766px) and (min-width: 428px) {
+    .sary {
+        display: none;
+    }
+
+    .deco2 {
+        display: block;
+    }
+}

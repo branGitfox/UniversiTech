@@ -1,0 +1,61 @@
+.screen {
+    /* background-color: red; */
+
+}
+
+
+
+.box_content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+}
+
+.content_soratra {
+    justify-content: center;
+    display: flex;
+    /* padding: 2rem 0 2rem 5rem; */
+}
+
+
+
+
+.soratra {
+    text-align: start;
+    font-size: 22px;
+    padding: 4rem;
+    
+}
+
+.box_sary {
+    background-color: #dfdfdf;
+    padding: 2em;
+    border-radius: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+    
+}
+
+.image {
+    width: 50%;
+}
+
+
+
+
+@media screen and (max-width:428px) {
+  .content_soratra{
+    display: none;
+  }
+    }
+    
+    @media screen and (max-width: 766px) and (min-width: 428px) {
+        .content_soratra{
+            display: none;
+          }
+    }

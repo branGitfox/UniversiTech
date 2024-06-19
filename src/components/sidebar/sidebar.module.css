@@ -1,0 +1,40 @@
+.section{
+    /* position: fixed; */
+}
+.burger{
+    color: black;
+}
+
+
+.lien{
+
+}
+
+.name{
+color: black;
+}
+
+.name2{
+
+}
+
+.icon{
+color: black;
+}
+
+.active{
+color: #ffbc00  ;
+transition: 0.3s;
+}
+
+.Non_active{
+color: white;
+transition: 0.3s;
+}
+
+
+.Non_active:hover, .active:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+    color: #ffbc00  ;
+}

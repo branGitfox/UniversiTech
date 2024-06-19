@@ -1,0 +1,103 @@
+.screen {
+    background-color: #F5F5F5;
+    margin-top: 1rem;
+
+}
+
+
+
+.box_content {
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    place-items: center;
+    padding: 7rem 0 3rem 0;
+    gap: 6rem;
+}
+
+.content{
+    position: relative;
+}
+
+
+.titre{
+    text-transform: uppercase;
+    color: white;
+    background-color: #0D77ED;
+    position: absolute;
+    top: -24px;
+    padding:  1rem 6rem;
+    border-radius: 13px;
+}
+
+.content_soratra {
+    justify-content: center;
+    display: flex;
+    /* padding: 2rem 0 2rem 5rem; */
+}
+
+
+
+
+.soratra {
+    text-align: start;
+    font-size: 22px;
+    padding: 4rem;
+    
+}
+
+.box_sary {
+    position: relative;
+    background-color: white;
+    padding: 4rem 5rem;
+    border-radius: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+    
+}
+
+.box_text_image{
+    padding-top: 2rem;
+}
+
+
+.classe{
+    text-align: center;
+    width: 100%;
+    padding: 0 0 2rem 0;
+    border-bottom: solid 2px black;
+}
+
+
+.image {
+    top: -50px;
+    width: 40%;
+    position: absolute;
+}
+
+
+.seconnecter {
+   
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+.seconnecter:hover{
+    transform: scale(1.1);
+    transition: 0.3;
+}
+
+
+@media screen and (max-width:428px) {
+  .content_soratra{
+    display: none;
+  }
+    }
+    
+    @media screen and (max-width: 766px) and (min-width: 428px) {
+        .content_soratra{
+            display: none;
+          }
+    }

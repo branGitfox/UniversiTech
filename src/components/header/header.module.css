@@ -1,0 +1,25 @@
+.content{
+   
+    width: 100%;
+    background-color: #ffbc00;
+    /* border-top-left-radius: 13px;
+    border-bottom-left-radius: 13px; */
+}
+
+.box_content{
+    align-items: center;
+  
+  
+
+}
+.Box_sary{
+    align-items: center;
+}
+.Box_sary img{
+    border-radius: 50%;
+    width: 5%;
+}
+
+.Box_name_andfiliere{
+
+}
