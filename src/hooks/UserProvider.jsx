@@ -5,7 +5,7 @@ const UserContext = createContext();
 export const useUser = () => useContext(UserContext);
 
 export const UserProvider = ({ children }) => {
-  const [userData, setUserData] = useState({ name: '', filiere: '', status: 0 });
+  const [userData, setUserData] = useState({ name: '', filiere: '', status: 0, id_filiere:'' });
 
   const setStudents = (data) => { // Définissez la fonction setStudents
     setUserData(data);

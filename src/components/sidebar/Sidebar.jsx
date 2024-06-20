@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext } from 'react';
 import s from "./sidebar.module.css";
 import { HiMenuAlt3 } from 'react-icons/hi';
 import { FaHome } from "react-icons/fa";
@@ -7,15 +7,15 @@ import { GiAcousticMegaphone } from "react-icons/gi";
 import { PiNoteFill } from "react-icons/pi";
 import { NavLink } from 'react-router-dom'; // Utilisez NavLink au lieu de Link
 import { useState } from 'react';
+import UserContext from '../../hooks/UserProvider';
 
 export default function Sidebar({ isOpen, toggleSidebar }) {
-  const menu = [
-    { name: "Menue", link: "/", icon: FaHome },
-    { name: "Evenement", link: "/evenement", icon: GiAcousticMegaphone },
-    { name: "Emploi du temps", link: "/emploidutemps", icon: MdEventAvailable },
-    { name: "Notes", link: "/notes", icon: PiNoteFill },
-  ];
-
+    const {userData} = useContext(UserContext)
+    const stat = userData.status
+    const menu = stat ==0?
+    [{ name: "Menue", link: "/", icon: FaHome }, { name: "Evenement", link: "/connexion", icon: GiAcousticMegaphone }, { name: "Emploi du temps", link: "/connexion", icon: MdEventAvailable }, { name: "Notes", link: "/connexion", icon: PiNoteFill }]:
+    [{ name: "Menue", link: "/", icon: FaHome }, { name: "Evenement", link: "/evenement", icon: GiAcousticMegaphone }, { name: "Emploi du temps", link: "/emploidutemps", icon: MdEventAvailable }, { name: "Notes", link: "/notes", icon: PiNoteFill }]
+   
   return (
     <Fragment>
       <section className="flex gap-6">

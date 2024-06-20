@@ -1,10 +1,16 @@
 import React, { Fragment, useContext } from 'react';
+import { useNavigate } from 'react-router';
 import s from "./header.module.css";
 import { LuLogOut } from 'react-icons/lu';
 import UserContext from '../../hooks/UserProvider'; // Importez le contexte utilisateur
 
 export default function Header() {
+  const navigate = useNavigate()
   const { userData } = useContext(UserContext); // Accédez aux données utilisateur depuis le contexte
+  const toggle = (link) => {
+    link==''?userData.status = 0:navigate('/'+link)
+    
+  }
 
   return (
     <Fragment>
@@ -19,7 +25,7 @@ export default function Header() {
               </div>
             </div>
           </div>
-          <div className={`${s.deconnect}`}>
+          <div onClick={()=>toggle(userData.status == 0?"connexion":'')} className={`${s.deconnect}`}>
            {userData.status == 0?'Se connecter':<LuLogOut size={25} />} 
           </div>
         </div>

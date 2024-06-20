@@ -11,6 +11,8 @@ export default function Routers() {
           NavData.map((route, index) => (
             <Route key={index} path={route.path} element={< route.page />}  />))
         }
+
+        R
       </Routes>
     </BrowserRouter>
   )

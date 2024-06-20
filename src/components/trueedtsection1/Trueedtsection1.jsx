@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react';
 
-export default function Trueedtsection1() {
+export default function Trueedtsection1({emplois}) {
+
     const scheduleData1 = [
         // Lundi à Mercredi
         {
-            day: 'Lundi 17.06',
+            day: 'Lundi',
             slots: [
                 { time: '7h15 à 9h15', subject: 'TD Programmation' },
                 { time: '9h30 à 11h15', subject: 'Equations Différentielles' },
@@ -13,7 +14,7 @@ export default function Trueedtsection1() {
             ]
         },
         {
-            day: 'Mardi 18.06',
+            day: 'Mardi',
             slots: [
                 { time: '7h15 à 9h15', subject: 'SD/Java    ' },
                 { time: '9h30 à 11h15', subject: 'CAE' },
@@ -22,7 +23,7 @@ export default function Trueedtsection1() {
             ]
         },
         {
-            day: 'Mercredi 19.06',
+            day: 'Mercredi',
             slots: [
                 { time: '7h15 à 9h15', subject: '' },
                 { time: '9h30 à 11h15', subject: '' },
@@ -35,7 +36,7 @@ export default function Trueedtsection1() {
     const scheduleData2 = [
         // Jeudi à Samedi
         {
-            day: 'Jeudi 20.06',
+            day: 'Jeudi',
             slots: [
                 { time: '7h15 à 9h15', subject: 'Comptabilité' },
                 { time: '9h30 à 11h15', subject: 'Recherche Opérationnelle (IGGLIA2-ISAIA2)' },
@@ -44,7 +45,7 @@ export default function Trueedtsection1() {
             ]
         },
         {
-            day: 'Vendredi 21.06',
+            day: 'Vendredi',
             slots: [
                 { time: '7h15 à 9h15', subject: 'JavaScript' },
                 { time: '9h30 à 11h15', subject: 'Technique Bancaire' },
@@ -53,7 +54,7 @@ export default function Trueedtsection1() {
             ]
         },
         {
-            day: 'Samedi 22.06',
+            day: 'Samedi',
             slots: [
                 { time: '7h15 à 9h15', subject: 'TD Programmation' },
                 { time: '9h30 à 11h15', subject: 'PHP ' },
@@ -63,7 +64,7 @@ export default function Trueedtsection1() {
         }
     ];
 
-    const timeSlots = ['7h15 à 9h15', '9h30 à 11h15', '12h30 à 14h', '14h à 15h30'];
+   
 
     return (
         <Fragment>
@@ -86,18 +87,81 @@ export default function Trueedtsection1() {
                                     ))}
                                 </tr>
                             </thead>
+                            
                             <tbody>
-                                {timeSlots.map((slot, slotIndex) => (
-                                    <tr key={slotIndex}>
-                                        <td className="bg-blue-200 px-4 py-2 border text-center font-bold">{slot}</td>
-                                        {scheduleData1.map((day, dayIndex) => (
-                                            <td key={dayIndex} className="px-4 py-2 border text-center">
-                                                {day.slots[slotIndex].subject}
-                                            </td>
-                                        ))}
-                                    </tr>
-                                ))}
-                            </tbody>
+                                
+                                <tr>
+                                    <td className="bg-blue-200 px-4 py-2 border text-center font-bold">7h15-9h15</td>
+                                  
+                                        <td className="px-4 py-2 border text-center">
+                                        {emplois.lundi_7h15_9h15}
+                                            
+                                        </td>
+                                        <td className="px-4 py-2 border text-center">
+                                        {emplois.mardi_7h15_9h15}
+                                            
+                                        </td>
+                                        
+                                        <td className="px-4 py-2 border text-center">
+                                         {emplois.mercredi_7h_9h15} 
+                                            
+                                        </td>
+                                   
+                                </tr>
+                                <tr>
+                                    <td className="bg-blue-200 px-4 py-2 border text-center font-bold">9h15-11h15</td>
+                                  
+                                        <td className="px-4 py-2 border text-center">
+                                            {emplois.lundi_9h15_11h15}
+                                        </td>
+                                        <td className="px-4 py-2 border text-center">
+                                        {emplois.mardi_9h15_11h15}
+                                            
+                                        </td>
+                                        <td className="px-4 py-2 border text-center">
+                                        {emplois.mercredi_9h15_11h15}
+                                            
+                                        </td>
+                                   
+                                </tr>
+                                <tr>
+                                    <td className="bg-blue-200 px-4 py-2 border text-center font-bold">12h30-14h</td>
+                                  
+                                        <td className="px-4 py-2 border text-center">
+                                        {emplois.lundi_12h30_14h}
+                                            
+                                        </td>
+                                        <td className="px-4 py-2 border text-center">
+                                        {emplois.mardi_12h30_14h}
+                                            
+                                        </td>
+                                        <td className="px-4 py-2 border text-center">
+                                        {emplois.mercredi_12h30_14h}
+                                            
+                                        </td>
+                                   
+                                </tr>
+                                <tr>
+                                    <td className="bg-blue-200 px-4 py-2 border text-center font-bold">14h-15h30</td>
+                                  
+                                        <td className="px-4 py-2 border text-center">
+                                        {emplois.lundi_14h_15h30}
+                                            
+                                        </td>
+
+                                        <td className="px-4 py-2 border text-center">
+                                        {emplois.mardi_14h_15h30}
+                                            
+                                        </td>
+                                        <td className="px-4 py-2 border text-center">
+                                        {emplois.mercredi_14h_15h30}
+                                            
+                                        </td>
+                                   
+                                </tr>           
+                           
+                        </tbody>
+                           
                         </table>
 
                     </div>
@@ -115,16 +179,68 @@ export default function Trueedtsection1() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {timeSlots.map((slot, slotIndex) => (
-                                    <tr key={slotIndex}>
-                                        <td className="bg-blue-200 px-4 py-2 border text-center font-bold">{slot}</td>
-                                        {scheduleData2.map((day, dayIndex) => (
-                                            <td key={dayIndex} className="px-4 py-2 border text-center">
-                                                {day.slots[slotIndex].subject}
+                                
+                                    <tr>
+                                        <td className="bg-blue-200 px-4 py-2 border text-center font-bold">7h15-9h15</td>
+                                      
+                                            <td className="px-4 py-2 border text-center">
+                                            {emplois.jeudi_7h15_9h15}
+                                                
                                             </td>
-                                        ))}
+                                            <td className="px-4 py-2 border text-center">
+                                            {emplois.vendredi_7h15_9h15}
+                                                
+                                            </td>
+                                            <td className="px-4 py-2 border text-center">
+                                            {emplois.samedi_7h15_9h15}
+                                                
+                                            </td>
+                                       
                                     </tr>
-                                ))}
+                                    <tr>
+                                        <td className="bg-blue-200 px-4 py-2 border text-center font-bold">9h15-11h15</td>
+                                      
+                                            <td className="px-4 py-2 border text-center">
+                                                {emplois.jeudi_9h15_11h15}
+                                            </td>
+                                            <td className="px-4 py-2 border text-center">
+                                                {emplois.vendredi_9h15_11h15}
+                                                
+                                            </td>
+                                            <td className="px-4 py-2 border text-center">
+                                                {emplois.samedi_9h15_11h15}
+                                                
+                                            </td>
+                                       
+                                    </tr>
+                                    <tr>
+                                        <td className="bg-blue-200 px-4 py-2 border text-center font-bold">12h30-14h</td>
+                                      
+                                            <td className="px-4 py-2 border text-center">
+                                            {emplois.jeudi_12h30_14h}
+                                                
+                                            </td>
+                                            <td className="px-4 py-2 border text-center">
+                                            {emplois.vendredi_12h30_14h}
+                                                
+                                            </td>
+                                       
+                                    </tr>
+                                    <tr>
+                                        <td className="bg-blue-200 px-4 py-2 border text-center font-bold">14h-15h30</td>
+                                      
+                                            <td className="px-4 py-2 border text-center">
+                                            {emplois.jeudi_14h_15h30}
+                                                
+                                            </td>
+
+                                            <td className="px-4 py-2 border text-center">
+                                            {emplois.vendredi_14h_15h30}
+                                                
+                                            </td>
+                                       
+                                    </tr>           
+                               
                             </tbody>
                         </table>
 

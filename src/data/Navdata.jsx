@@ -44,12 +44,12 @@ const NavData = [
     },
     {
 
-        path: "/emploidutempsbyfiliere",
+        path: "/emploidutempsbyfiliere/:annee",
         page: Emploidutempsbyfiliere
     },
     {
 
-        path: "/trueedt",
+        path: "/trueedt/:annee/:filiere",
         page: TrueEdt
     },
     {
@@ -57,6 +57,12 @@ const NavData = [
         path: "/notes",
         page: Notes
     },
+
+    // {
+
+    //     path: "/emploie",
+    //     page: Notes
+    // },
 
 
 ]
