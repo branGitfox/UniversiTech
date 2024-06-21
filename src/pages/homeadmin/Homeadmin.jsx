@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import s from "./homeadmin.module.css"
 import Header from '../../components/header/Header';
 import Sidebar from '../../components/sidebar/Sidebar';
@@ -7,10 +7,24 @@ import { useState, Fragment } from 'react';
 import "../../tailwind.css";
 import Dashbord from '../../components/dashbord/Dashbord';
 import Bashheaderadmin from '../../components/bashheaderadmin/Bashheaderadmin';
+import UserProvider  from '../../hooks/UserProvider';
+import { useNavigate } from 'react-router';
 
 export default function Homeadmin() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+    const {userData} = useContext(UserProvider)
+    const Navigate = useNavigate()
 
+    const redirectFakeAdmin = () => {
+        if(userData.name != 'Admin'){
+            Navigate('/')
+        }
+    }
+
+    useEffect(() =>{
+        redirectFakeAdmin()
+    })
+    
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
