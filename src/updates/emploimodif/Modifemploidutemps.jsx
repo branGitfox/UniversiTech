@@ -32,12 +32,12 @@ export default function Modifemploidutemps() {
     const handleSubmit = async (e) => {
 
         e.preventDefault();
-        console.log(`Jours : ${inputs.Jours} ; Date : ${inputs.date} ; description : ${inputs.description} ; `);
+        console.log(`Jours : ${inputs.jours} ; filieres: ${inputs.filieres} ; description : ${inputs.niveau} ; `);
 
         try {
-            const response = await axios.post('http', inputs);
+            const response = await axios.put('http://localhost/api/index.php', inputs);
             console.log('reponse ', response.data);
-            navigate("/evenement");
+            // navigate("/evenement");
         } catch (error) {
             console.error('Erreur lors de la requête:', error);
         }
@@ -77,13 +77,13 @@ export default function Modifemploidutemps() {
                                             onChange={handleChange}
                                             required
                                         >
-                                            <option value="1">Lundi</option>
-                                            <option value="2">Mardi</option>
-                                            <option value="3">Mercredi</option>
-                                            <option value="4">Jeudi</option>
-                                            <option value="5">Vendredi</option>
-                                            <option value="6">Samedi</option>
-                                            <option value="7">Dimanche</option>
+                                            <option value="lundi">Lundi</option>
+                                            <option value="mardi">Mardi</option>
+                                            <option value="mercredi">Mercredi</option>
+                                            <option value="jeudi">Jeudi</option>
+                                            <option value="vendredi">Vendredi</option>
+                                            <option value="samedi">Samedi</option>
+                                            <option value="dimanche">Dimanche</option>
                                         </select>
                                     </div>
 
@@ -95,7 +95,7 @@ export default function Modifemploidutemps() {
                                         <select
                                             className={`${s.titre} w-2/4 appearance-none py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
                                             id="Filieres"
-                                            name="Filieres"
+                                            name="filieres"
                                             onChange={handleChange}
                                             required
                                         >
@@ -104,7 +104,7 @@ export default function Modifemploidutemps() {
                                             <option value="2">TOUR</option>
                                             <option value="3">ESIIA</option>
                                             <option value="4">BIO</option>
-                                            <option value="4">EMI</option>
+                                            <option value="5">EMI</option>
                                           
                                         </select>
                                     </div>
@@ -118,16 +118,16 @@ export default function Modifemploidutemps() {
                                         <select
                                             className={`${s.titre} w-2/4 appearance-none py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
                                             id="Niveaux"
-                                            name="Niveaux"
+                                            name="niveau"
                                             onChange={handleChange}
                                             required
                                         >
 
-                                            <option value="1">L1</option>
-                                            <option value="2">L2</option>
-                                            <option value="3">L3</option>
-                                            <option value="4">M1</option>
-                                            <option value="4">M2</option>
+                                            <option value="L1">L1</option>
+                                            <option value="L2">L2</option>
+                                            <option value="L3">L3</option>
+                                            <option value="M1">M1</option>
+                                            <option value="M2">M2</option>
                                           
                                         </select>
                                     </div>
