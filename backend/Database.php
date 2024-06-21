@@ -48,4 +48,37 @@
         $emploi->execute([$annee_filiere, $id_filiere]);
         return $emploi->fetch();
     }
+
+    public function newEvent($titre,$date, $description){
+        $newEvent = $this->connect()
+        ->prepare('INSERT INTO events (`titre`,`date`,`description`) VALUES (?,?,?)');
+        $newEvent->execute([$titre, $date, $description]);
+    }
+
+    public function getEvents(){
+        $events = $this->connect()
+        ->query('SELECT * FROM events');
+        $events->execute();
+        return $events->fetchAll();
+    }
+
+
+    public function UpdateSchedule($jour, $filieres, $niveau, $matiere1, $matiere2, $matiere3, $matiere4){
+        
+        switch($jour){
+            case "lundi":
+                $test=$this->connect()
+                ->prepare('UPDATE horaire SET lundi_7h15_9h15=?, lundi_9h15_11h15=?, lundi_12h30_14h=?, lundi_14h_15h30=? WHERE id_emploi=? AND annee_filiere=?');
+                $test->execute([$matiere1, $matiere2, $matiere3, $matiere4, $filieres, $niveau]);
+                break;
+                case "mardi":
+                    $test=$this->connect()
+                    ->prepare('UPDATE horaire SET mardi_7h15_9h15=?, mardi_9h15_11h15=?, mardi_12h30_14h=?, mardi_14h_15h30=? WHERE id_emploi=? AND annee_filiere=?');
+                    $test->execute([$matiere1, $matiere2, $matiere3, $matiere4, $filieres, $niveau]);
+                    break;    
+        }
+
+        return true;
+    }
+    
 }
