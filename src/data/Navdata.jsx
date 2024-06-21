@@ -11,6 +11,7 @@ import Homeadmin from "../pages/homeadmin/Homeadmin";
 import Modifevent from "../updates/eventmodif/Modifevent";
 import Modifnote from "../updates/notemodif/Modifnote";
 import Modifemploidutemps from "../updates/emploimodif/Modifemploidutemps";
+import NotFound from "../pages/404/NotFound";
 
 
 
@@ -82,11 +83,12 @@ const NavData = [
         path: "/modifemploidutemps",
         page: Modifemploidutemps
     }, 
-    // //route ny erreur ity
-    // {
-    //     path:"/notFound"
+    //route ny erreur ity
+    {
+        path:"/notFound",
+        page:NotFound
         
-    // }
+    }
 
 
     // {
