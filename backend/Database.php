@@ -35,9 +35,17 @@
 
     public function listOfUSer(){
         $list = $this->connect()
-        ->prepare('SELECT * FROM etudiants');
+        ->prepare('SELECT * FROM etudiants JOIN filieres ON filieres.id_filiere = etudiants.id_filiere');
         $list->execute();
        return $list->fetchAll();
 
+
+    }
+
+    public function emploie($annee_filiere, $id_filiere) {
+        $emploi= $this->connect()
+        ->prepare('SELECT * FROM emplois  JOIN horaire  ON horaire.id_emploi= emplois.id_emploi   WHERE emplois.annee_filiere=? AND emplois.id_filiere=? ');
+        $emploi->execute([$annee_filiere, $id_filiere]);
+        return $emploi->fetch();
     }
 }

@@ -100,12 +100,28 @@ switch ($method) {
 
         break;
     case "GET":
+        
+        
+        // echo $link[4];
+        if(strlen($_SERVER['REQUEST_URI']) == 19){
+                $link=explode('/',$_SERVER['REQUEST_URI']) ;
+                $annee=$link[3];
+                 $id_filiere = $link[4];
+                if($db->emploie($annee, $id_filiere)){
+                    $response = $db->emploie($annee, $id_filiere);
+                }else{
+                    $response = "pas d'emplois du temps";
+                }
+        }else {
+                
             if($db->listOfUSer()){
                 $response = $db->listOfUSer();
             }else {
                 $response = "erreur";
+            }
 
             }
+
         echo json_encode($response);
         break;
 }
