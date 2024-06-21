@@ -1,9 +1,11 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import s from "./eventsection1.module.css"
+import axios from 'axios'
+import { useNavigate } from 'react-router'
 
 
-export default function Eventsection1({ev}) {
-
+export default function Eventsection1({ev, setid}) {
+   
 
 
 
@@ -15,7 +17,7 @@ export default function Eventsection1({ev}) {
                 {/* Section gauche */}
 
                 <div className={`${s.gauche} w-full md:w-2/2 flex flex-col justify-between items-center  `}>
-
+                    <button onClick={() => setid(ev.id_event)}>X</button>
 
 
                     <div className={`${s.box1} d-flex flex-col gap-3 `}>
