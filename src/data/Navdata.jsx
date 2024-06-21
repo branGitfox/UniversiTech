@@ -15,6 +15,7 @@ import Modifemploidutemps from "../updates/emploimodif/Modifemploidutemps";
 
 
 
+
 const NavData = [
     {
         path: "/",
@@ -81,6 +82,11 @@ const NavData = [
         path: "/modifemploidutemps",
         page: Modifemploidutemps
     }, 
+    // //route ny erreur ity
+    // {
+    //     path:"/notFound"
+        
+    // }
 
 
     // {

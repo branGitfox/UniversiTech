@@ -1,6 +1,8 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import NavData from '../data/Navdata'
+import Home from '../pages/home/Home'
+// import NotFound from '../pages/404/NotFound'
 
 
 export default function Routers() {
@@ -11,8 +13,8 @@ export default function Routers() {
           NavData.map((route, index) => (
             <Route key={index} path={route.path} element={< route.page />}  />))
         }
-
-        R
+        <Route element={<Home/>}/>
+       
       </Routes>
     </BrowserRouter>
   )
