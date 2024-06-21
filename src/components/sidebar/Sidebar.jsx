@@ -8,6 +8,7 @@ import { PiNoteFill } from "react-icons/pi";
 import { NavLink } from 'react-router-dom'; // Utilisez NavLink au lieu de Link
 import { useState } from 'react';
 import UserContext from '../../hooks/UserProvider';
+import { Link } from 'react-router-dom';
 
 export default function Sidebar({ isOpen, toggleSidebar }) {
     const {userData} = useContext(UserContext)
@@ -44,7 +45,14 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
                   {item.name}
                 </h2>
               </NavLink>
-            ))}
+           
+             
+            ))} 
+              {/*STYLISEO ETO RAH ANDRO KOTO KELY!! :-)  */}
+            {userData.name == 'Admin'?<NavLink>
+                <Link to="/admin">DashBoard</Link>
+              </NavLink>:''}
+            
           </div>
         </div>
       </section>
