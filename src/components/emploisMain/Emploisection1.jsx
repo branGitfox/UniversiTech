@@ -4,7 +4,7 @@ import Emploisecion1datas from '../../data/Emploisecion1data';
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import UserProvider from '../../hooks/UserProvider'
-import image1 from  "./image/connexion/deco1.png"
+// import image1 from  "./image/connexion/deco1.png"
 export default function Emploisection1() {
     const {annee,filiere}=useParams()
     const [filieres, setFiliere] = useState(Emploisecion1datas)
