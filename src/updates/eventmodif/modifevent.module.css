@@ -1,0 +1,53 @@
+/* .homepage{
+    background-color: #f6f6f6;
+    padding: 0 5rem;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.homepage{
+    padding: 5rem 0 0 0 ;
+    
+}
+
+.screen {
+    height: 100vh;
+    justify-content: center;
+    /* background-color: #f6f6f6; */
+
+}
+
+.content_homepage{
+    padding: 0 6rem;
+}
+
+.content_box{
+    justify-content: center;
+    background-color: #F4F4F4;
+    display: flex
+
+}
+
+.form{
+    /* padding: 0 5rem; */
+}
+
+.Description , .date , .titre {
+    background-color: #DFDFDF;
+    border-radius: 13px;
+}
+
+.titre{
+    text-transform: uppercase;
+}
+
+.Description{
+    height: 10rem;
+}
+
+.publier{
+    background-color: #0D78EC;
+    border-radius: 13px;
+}

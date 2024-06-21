@@ -7,6 +7,10 @@ import Note from "../pages/notes/Note"
 import Emploidutempsbyfiliere from "../pages/emploidutempsbyfiliere/Emploidutempsbyfiliere"
 import TrueEdt from "../pages/trueedt/TrueEdt";
 import Notes from "../pages/note/Notes";
+import Homeadmin from "../pages/homeadmin/Homeadmin";
+import Modifevent from "../updates/eventmodif/Modifevent";
+import Modifnote from "../updates/notemodif/Modifnote";
+import Modifemploidutemps from "../updates/emploimodif/Modifemploidutemps";
 
 
 
@@ -57,6 +61,27 @@ const NavData = [
         path: "/notes",
         page: Notes
     },
+    {
+        //tsy ilaignna
+        path: "/admin",
+        page: Homeadmin
+    }, 
+    {
+        //tsy ilaignna
+        path: "/modifevent",
+        page: Modifevent
+    }, 
+    {
+        //tsy ilaignna
+        path: "/modifnote",
+        page: Modifnote
+    }, 
+    {
+        //tsy ilaignna
+        path: "/modifemploidutemps",
+        page: Modifemploidutemps
+    }, 
+
 
     // {
 

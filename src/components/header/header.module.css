@@ -12,6 +12,7 @@
   
 
 }
+
 .Box_sary{
     align-items: center;
 }
@@ -22,4 +23,16 @@
 
 .Box_name_andfiliere{
 
+}
+
+
+.btnconnect{
+
+    border-radius: 8px;
+    transition: 0.5s;
+}
+
+.btnconnect:hover{
+    transition: 0.5s;
+    transform: scale(1.1);
 }

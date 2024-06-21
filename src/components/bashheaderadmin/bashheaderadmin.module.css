@@ -1,0 +1,79 @@
+.screen{
+    border-radius: 4px;
+    /* background-color: #dfdfdf; */
+}
+
+
+.gauche{
+  
+    justify-content: start;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    /* background-color: blue; */
+    
+}
+
+
+.box1{
+    background-image: url("../../../public/image/adm2.png   ");
+  background-size: cover;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 13px;
+    width: 100%;
+    /* background-color: #D528F4; */
+    justify-content: start;
+    align-items: start;
+}
+.box2{
+    background-image: url("../../../public/image/adm1.png");
+    background-size: cover;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 13px;
+    width: 100%;
+    /* background-color: #1E93E3; */
+    justify-content: start;
+    align-items: start;
+}
+.box1 h3{
+    font-size: 2rem;
+}
+.box1 h1{
+    font-size: 3rem;
+}
+.box2 h3{
+    font-size: 2rem;
+}
+.box2 h1{
+    font-size: 3rem;
+}
+
+
+.droite{
+    justify-content: start;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    /* background-color: red; */
+}
+
+
+
+.box_droite{
+   
+}
+
+
+@media screen and (max-width:428px) {
+.gauche{
+    display: none;
+}
+}
+
+@media screen and (max-width: 766px) and (min-width: 428px) {
+    .gauche{
+        display: none;
+    }
+}

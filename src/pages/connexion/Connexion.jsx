@@ -36,10 +36,12 @@ console.log(members)
       (member) =>
         member.email === inputs.email && member.password === inputs.password
     );
-      // console.log(chercheMember);
+
+      console.log(chercheMember);
     if (chercheMember) {
       setStudents({ name: chercheMember[1], filiere: chercheMember[8], status:1, id_filiere: chercheMember.id_filiere}); // Mettez à jour les données de l'utilisateur avec setStudents
       navigate('/');
+        // console.log(userData)
     } else {
       alert('Veuillez vérifier vos informations');
     }

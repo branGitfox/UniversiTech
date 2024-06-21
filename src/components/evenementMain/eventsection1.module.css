@@ -1,0 +1,30 @@
+.screen{
+    border-radius: 13px;
+    padding: 2rem;
+    background-color: white;
+}
+
+.box1{
+border-radius: 13px;
+padding: 0 0 3rem 0 ;
+width: 100%;
+}
+
+
+.box1 h1{
+    font-size: 1.3rem;
+    font-weight: bold;
+   
+}
+
+.box2{
+    padding: 5rem;
+    align-items:center;
+    border-radius: 13px;
+    width: 100%;
+    background-color: #DFDFDF;
+}
+.box2 h1{
+    font-size: 1.3rem;
+    font-weight: bold;
+}

@@ -2,15 +2,16 @@ import React, { Fragment, useContext } from 'react';
 import { useNavigate } from 'react-router';
 import s from "./header.module.css";
 import { LuLogOut } from 'react-icons/lu';
-import UserContext from '../../hooks/UserProvider'; // Importez le contexte utilisateur
+import UserProvider from '../../hooks/UserProvider'; // Importez le contexte utilisateur
 
 export default function Header() {
   const navigate = useNavigate()
-  const { userData } = useContext(UserContext); // Accédez aux données utilisateur depuis le contexte
+  const { userData } = useContext(UserProvider); // Accédez aux données utilisateur depuis le contexte
   const toggle = (link) => {
-    link==''?userData.status = 0:navigate('/'+link)
+    link===''?userData.status = 0:navigate('/'+link)
     
   }
+  console.log(userData);
 
   return (
     <Fragment>
@@ -25,8 +26,8 @@ export default function Header() {
               </div>
             </div>
           </div>
-          <div onClick={()=>toggle(userData.status == 0?"connexion":'')} className={`${s.deconnect}`}>
-           {userData.status == 0?'Se connecter':<LuLogOut size={25} />} 
+          <div onClick={()=>toggle(userData.status === 0?"connexion":'')} className={`${s.deconnect}`}>
+           {userData.status === 0?<button  className={`${s.btnconnect} py-2 px-4  bg-gray-800  text-gray-100`} >Se connecter</button>:<button style={{background:'orangered', color:'white', padding:'7px 10px', borderRadius:'5px'}}><LuLogOut size={25} /></button>} 
           </div>
         </div>
       </div>

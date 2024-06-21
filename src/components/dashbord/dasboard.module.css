@@ -1,0 +1,28 @@
+
+.screen{
+    border-radius: 13px;
+    background-color: #ffff ;
+    padding: 2rem;
+}
+
+.info{
+    font-weight: bold;
+    padding: 0 0 2rem 1rem;
+    font-size: 2rem;
+}
+.content{
+    background-color: red;
+}
+
+.titre{
+    font-size: 1.2rem;
+}
+
+
+.voir{
+    color:#3172CE;
+}
+
+.delete{
+    color: red;
+}
