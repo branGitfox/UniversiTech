@@ -2,11 +2,11 @@ import React, { Fragment, useContext } from 'react'
 import s from "./emploisection1.module.css"
 import Emploisecion1datas from '../../data/Emploisecion1data';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import UserProvider from '../../hooks/UserProvider'
 export default function Emploisection1() {
-
-    const [filiere, setFiliere] = useState(Emploisecion1datas)
+    const {annee,filiere}=useParams()
+    const [filieres, setFiliere] = useState(Emploisecion1datas)
     // const {userData} = useContext(UserProvider)
     
     
@@ -34,14 +34,14 @@ export default function Emploisection1() {
 
 
                         {
-                            filiere.map((item, index) => (
+                            filieres.map((item, index) => (
                                 <div className={`${s.categorie_sary} `} key={index}>
                                     <div className={`${s.box_sary} flex-col`}>
                                         <img className={`${s.image}`} src={`image/icone/${item.sary}.png`} alt="" />
                                         <div className={`${s.box_text_image}`}>
                                             <h3>{item.name}</h3>
-                                            <h4 className={`${s.classe}`}>{item.classe}</h4>
-                                            <Link to={"/emploidutempsbyfiliere/"+item.classe} className={`pt-4 flex justify-center`}>
+                                            <h4 className={`${s.classe}`}>{item.classe}</h4> 
+                                             <Link to={"/emploidutempsbyfiliere/"+item.classe} className={`pt-4 flex justify-center`}>
                                                 <input className={`${s.seconnecter} ${s.apropos}  text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline`} type="submit" style={{ backgroundColor:  `${item.color}` }} value="Lire" />
                                             </Link>
                                         </div>
