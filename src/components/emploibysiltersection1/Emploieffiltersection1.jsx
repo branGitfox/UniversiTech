@@ -12,11 +12,11 @@ export default function Emploieffiltersection1() {
     const [filiere, setFiliere] = useState(CardDatafiliere)
 
 const id_filiere = (fil) => {
-    if(fil=='IGGLIA'){
+    if(fil==='IGGLIA'){
         return 1
-    }else if(fil=='ESIA'){
+    }else if(fil==='ESIA'){
         return 2
-    }else if(fil = 'EMII'){
+    }else if(fil === 'EMII'){
         return 3
     }else{
         return 0
@@ -42,7 +42,7 @@ const id_filiere = (fil) => {
                             filiere.map((item, index) => (
                                 <Link to={"/trueedt/"+annee+"/"+id_filiere(item.name)} className={`${s.categorie_sary} `} key={index}>
                                     <div className={`${s.box_sary} flex-col`}>
-                                        <img className={`${s.image}`} src={`image/icone/${item.sary}.png`} alt="" />
+                                        <img className={`${s.image}`} src={`/image/icone/${item.sary}.png`} alt="" />
                                         <h3>{item.name}</h3>
                                     </div>
 
