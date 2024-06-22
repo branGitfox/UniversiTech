@@ -76,9 +76,37 @@
                     ->prepare('UPDATE horaire SET mardi_7h15_9h15=?, mardi_9h15_11h15=?, mardi_12h30_14h=?, mardi_14h_15h30=? WHERE id_emploi=? AND annee_filiere=?');
                     $test->execute([$matiere1, $matiere2, $matiere3, $matiere4, $filieres, $niveau]);
                     break;    
+                 case "mercredi":
+                    $test=$this->connect()
+                    ->prepare('UPDATE horaire SET mercredi_7h_9h15=?, mercredi_9h15_11h15=?, mercredi_12h30_14h=?, mercredi_14h_15h30=? WHERE id_emploi=? AND annee_filiere=?');
+                    $test->execute([$matiere1, $matiere2, $matiere3, $matiere4, $filieres, $niveau]);
+                    break;
+                    case "jeudi":
+                        $test=$this->connect()
+                        ->prepare('UPDATE horaire SET jeudi_7h15_9h15=?, jeudi_9h15_11h15=?, jeudi_12h30_14h=?, jeudi_14h_15h30=? WHERE id_emploi=? AND annee_filiere=?');
+                        $test->execute([$matiere1, $matiere2, $matiere3, $matiere4, $filieres, $niveau]);
+                        break;   
+                    case "vendredi":
+                            $test=$this->connect()
+                            ->prepare('UPDATE horaire SET vendredi_7h15_9h15=?, vendredi_9h15_11h15=?, vendredi_12h30_14h=?, vendredi_14h_15h30=? WHERE id_emploi=? AND annee_filiere=?');
+                            $test->execute([$matiere1, $matiere2, $matiere3, $matiere4, $filieres, $niveau]);
+                            break;   
+                            case "samedi":
+                                $test=$this->connect()
+                                ->prepare('UPDATE horaire SET samedi_7h15_9h15=?, samedi_9h15_11h15=? WHERE id_emploi=? AND annee_filiere=?');
+                                $test->execute([$matiere1, $matiere2, $filieres, $niveau]);
+                                break;         
         }
 
         return true;
     }
     
+
+    public function deleteByID($id) {
+        $del = $this->connect()
+        ->prepare('DELETE FROM events WHERE id_event = ?');
+        $del->execute([$id]);
+        return true;
+    }
+
 }
