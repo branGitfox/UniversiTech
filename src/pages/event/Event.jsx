@@ -6,7 +6,7 @@ import Sidebar from '../../components/sidebar/Sidebar';
 import Basheader from '../../components/basheader/Basheader';
 import Eventsection1 from '../../components/evenementMain/Eventsection1';
 import axios from 'axios';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 
 export default function Event() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
