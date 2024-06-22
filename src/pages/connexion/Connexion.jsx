@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import Lottie from 'lottie-react';
 import test from "../../Lottie/14.json";
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // Importer les styles AOS
+
 import UserContext from '../../hooks/UserProvider'; // Importez le contexte utilisateur
 
 
@@ -19,11 +18,6 @@ export default function Connexion() {
     getUser();
   }, []);
 
-  useEffect(() => {
-    AOS.init({
-
-    });
-  }, []);
 
   const getUser = async () => {
     const res = await fetch('http://localhost/api/index.php');

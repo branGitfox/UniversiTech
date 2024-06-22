@@ -22,7 +22,9 @@
 }
 
 .Box_name_andfiliere{
-
+    font-family: system-ui;
+    color: #4d4949;
+    font-weight: 600;
 }
 
 
@@ -33,6 +35,17 @@
 }
 
 .btnconnect:hover{
+    transition: 0.5s;
+    transform: scale(1.1);
+}
+
+.btndeconnect{
+    transition: 0.5s;
+}
+
+
+
+.btndeconnect:hover{
     transition: 0.5s;
     transform: scale(1.1);
 }

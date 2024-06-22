@@ -11,23 +11,18 @@ const users = [
 export default function Dashboard() {
     const data = [
         {
-            nom: 'MAROLAHY Sammy ',
-            email: 'Sammytsarevitch6@gmail.com',
+            nom: 'Orange ',
+            email: 'orange@gmail.com',
             numero: "0342290407",
-            filiere: 'IGGLIA 2A',
+            filiere: 'IGGLIA 1A',
         },
         {
-            nom: 'MAROLAHY Sammy Frederic',
-            email: 'Sammytsarevitch6@gmail.com',
-            numero: "0342290407",
+            nom: 'moi ',
+            email: 'moi@gmail.com',
+            numero: "0331142032",
             filiere: 'IGGLIA 2A',
         },
-        {
-            nom: 'MAROLAHY ',
-            email: 'Sammytsarevitch6@gmail.com',
-            numero: "0342290407",
-            filiere: 'IGGLIA 2A',
-        },
+      
 
 
     ];

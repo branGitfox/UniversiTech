@@ -5,7 +5,8 @@
 
 
 .gauche{
-  
+    color: #383535  ;
+    font-family: sans-serif;
     justify-content: center;
     display: flex;
     flex-direction: column;
