@@ -21,7 +21,8 @@ useEffect(() =>{
         console.log(response.data);
        
     }) 
-    Navigate('/evenement') 
+ Navigate('/evenement')
+    
 }, [delid])
 
   

@@ -9,14 +9,15 @@ import { NavLink } from 'react-router-dom'; // Utilisez NavLink au lieu de Link
 import { useState } from 'react';
 import UserContext from '../../hooks/UserProvider';
 import { Link } from 'react-router-dom';
+import { GrUserAdmin } from "react-icons/gr";
 
 export default function Sidebar({ isOpen, toggleSidebar }) {
-    const {userData} = useContext(UserContext)
-    const stat = userData.status
-    const menu = stat ==0?
-    [{ name: "Acceuil", link: "/", icon: FaHome }, { name: "Evenement", link: "/connexion", icon: GiAcousticMegaphone }, { name: "Emploi du Temps", link: "/connexion", icon: MdEventAvailable }, { name: "Notes", link: "/connexion", icon: PiNoteFill }]:
+  const { userData } = useContext(UserContext)
+  const stat = userData.status
+  const menu = stat == 0 ?
+    [{ name: "Acceuil", link: "/", icon: FaHome }, { name: "Evenement", link: "/connexion", icon: GiAcousticMegaphone }, { name: "Emploi du Temps", link: "/connexion", icon: MdEventAvailable }, { name: "Notes", link: "/connexion", icon: PiNoteFill }] :
     [{ name: "Acceuil", link: "/", icon: FaHome }, { name: "Evenement", link: "/evenement", icon: GiAcousticMegaphone }, { name: "Emploi du Temps", link: "/emploidutemps", icon: MdEventAvailable }, { name: "Notes", link: "/notes", icon: PiNoteFill }]
-   
+
   return (
     <Fragment>
       <section className="flex gap-6">
@@ -45,14 +46,15 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
                   {item.name}
                 </h2>
               </NavLink>
-           
-             
-            ))} 
-              {/*STYLISEO ETO RAH ANDRO KOTO KELY!! :-)  */}
-            {userData.name == 'Admin'?<NavLink>
-                <Link to="/admin">DashBoard</Link>
-              </NavLink>:''}
-            
+
+
+            ))}
+            {/*STYLISEO ETO RAH ANDRO  :-)  */}
+            {userData.name == 'Admin' ? <NavLink className={`${s.btnadmin}`} >
+              <GrUserAdmin />
+              <Link className={`${s.linkadmin}`} to="/admin">DashBoard</Link>
+            </NavLink> : ''}
+
           </div>
         </div>
       </section>

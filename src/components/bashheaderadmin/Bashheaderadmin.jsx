@@ -20,9 +20,12 @@ export default function Bashheaderadmin() {
 
                     <div className={`${s.box1} d-flex flex-col justify-between gap-8  `}>
                         <PiStudentFill size={60} />
-                        <h3>elève</h3>
-                        <h1>20</h1>
-                        <Link to={'/modifevent'}>Modifiez</Link>
+                        <h3>elèves</h3>
+                        <h1>3</h1>
+                        <button k className={`${s.parentsbtnmod}`} >
+                        <Link className={`${s.btnmod}`} to={'/admin'}>Modifiez</Link>
+                        </button>
+                      
 
                     </div>
 
@@ -35,9 +38,12 @@ export default function Bashheaderadmin() {
 
                     <div className={`${s.box2} d-flex flex-col justify-between gap-8  `}>
                         <MdOutlineEventAvailable size={60} />
-                        <h3>elève</h3>
-                        <h1>20</h1>
-                        <Link to={'/modifevent'}>Ajoutez</Link>
+                        <h3>evènement</h3>
+                        <h1>5</h1>
+                        <button  className={`${s.parentsbtnmod}`} >
+                        <Link className={`${s.btnmod}`}  to={'/modifevent'}>Ajoutez</Link>
+                        </button>
+                       
                     </div>
                 </div>
             </div>

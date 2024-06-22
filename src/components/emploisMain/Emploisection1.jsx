@@ -6,11 +6,12 @@ import { Link, useParams } from 'react-router-dom';
 import UserProvider from '../../hooks/UserProvider'
 // import image1 from  "./image/connexion/deco1.png"
 export default function Emploisection1() {
-    const {annee,filiere}=useParams()
+    const { annee, filiere } = useParams()
     const [filieres, setFiliere] = useState(Emploisecion1datas)
+    const { userData } = useContext(UserProvider)
     // const {userData} = useContext(UserProvider)
-    
-    
+
+
 
 
 
@@ -25,9 +26,9 @@ export default function Emploisection1() {
                 {/* Section droite: formulaire de login */}
                 <div className={`${s.content} w-full md:w-2/2 flex flex-col justify-center items-center`}>
                     <div className={`${s.titre} `}>
-                        <h2>Liste des emploi du temps</h2>
+                        {userData.name === 'Admin' ? <button><Link to="/modifemploidutemps"> Ajouter un emploi du temps</Link></button> : <h2>Liste des emplois du temps</h2>}
                     </div>
-                    <image1  />
+                    <image1 />
 
                     <div className={`${s.box_content} `}>
                         <div className={`${s.content_soratra} `}>
@@ -42,9 +43,9 @@ export default function Emploisection1() {
                                         <img className={`${s.image}`} src={`/image/icone/${item.sary}.png`} alt="" />
                                         <div className={`${s.box_text_image}`}>
                                             <h3>{item.name}</h3>
-                                            <h4 className={`${s.classe}`}>{item.classe}</h4> 
-                                             <Link to={"/emploidutempsbyfiliere/"+item.classe} className={`pt-4 flex justify-center`}>
-                                                <input className={`${s.seconnecter} ${s.apropos}  text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline`} type="submit" style={{ backgroundColor:  `${item.color}` }} value="Lire" />
+                                            <h4 className={`${s.classe}`}>{item.classe}</h4>
+                                            <Link to={"/emploidutempsbyfiliere/" + item.classe} className={`pt-4 flex justify-center`}>
+                                                <input className={`${s.seconnecter} ${s.apropos}  text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline`} type="submit" style={{ backgroundColor: `${item.color}` }} value="Lire" />
                                             </Link>
                                         </div>
                                     </div>

@@ -19,7 +19,6 @@ export default function Connexion() {
   }, []);
 
 
-
   const getUser = async () => {
     const res = await fetch('http://localhost/api/index.php');
     const jsonData = await res.json();

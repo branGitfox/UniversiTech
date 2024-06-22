@@ -38,3 +38,27 @@ transition: 0.3s;
     transition: 0.3s;
     color: #ffbc00  ;
 }
+
+.btnadmin{
+    transition: 0.3s;
+    align-items: center;
+    padding: 0 0 0 10px;
+    display: flex;
+    gap: 1rem;
+}
+
+.btnadmin:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+    color: #ffbc00  ;
+}
+
+.linkadmin{
+    transition: 0.3s;
+}
+
+.linkadmin:hover{
+    
+    transition: 3s;
+    color: #ffbc00  ;
+}

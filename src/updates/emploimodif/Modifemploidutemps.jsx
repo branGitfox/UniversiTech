@@ -37,7 +37,7 @@ export default function Modifemploidutemps() {
         try {
             const response = await axios.post('http://localhost/api/index.php/updateEmplois', inputs);
             console.log('reponse ', response.data);
-            // navigate("/evenement");
+            navigate("/emploidutemps");
         } catch (error) {
             console.error('Erreur lors de la requête:', error);
         }
@@ -100,7 +100,7 @@ export default function Modifemploidutemps() {
                                             onChange={handleChange}
                                             required
                                         >
-
+                                            <option value="">Filieres</option>
                                             <option value="1">IGGLIA</option>
                                             <option value="2">TOUR</option>
                                             <option value="3">ESIIA</option>
@@ -123,7 +123,7 @@ export default function Modifemploidutemps() {
                                             onChange={handleChange}
                                             required
                                         >
-
+                                            <option value="">niveaux</option>
                                             <option value="L1">L1</option>
                                             <option value="L2">L2</option>
                                             <option value="L3">L3</option>
