@@ -22,6 +22,7 @@ export default function Bashheaderadmin() {
                         <PiStudentFill size={60} />
                         <h3>elève</h3>
                         <h1>20</h1>
+                        <Link to={'/modifevent'}>Modifiez</Link>
 
                     </div>
 

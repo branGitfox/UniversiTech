@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Lottie from 'lottie-react';
-import test from "../../Lottie/8.json";
+import test from "../../Lottie/14.json";
 
 export default function Inscription() {
 

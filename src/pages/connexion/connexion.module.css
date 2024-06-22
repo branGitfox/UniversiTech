@@ -2,6 +2,7 @@
     height: 100vh;
     justify-content: center;
     background-color: #ffff;
+    overflow: hidden;
 
 }
 
@@ -11,6 +12,7 @@
 }
 .lotti{
     position: relative;
+    padding: 4rem;
 }
 
 .text_parents{
@@ -28,8 +30,9 @@
 }
 
 .text {
+    margin-top: -3rem;
     font-size: 20px;
-    color: white;
+    color: #4d4141;
     font-family: Arial, Helvetica, sans-serif;
     width: 50%;
     
