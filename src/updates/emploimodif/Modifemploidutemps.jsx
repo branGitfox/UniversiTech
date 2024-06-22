@@ -35,7 +35,7 @@ export default function Modifemploidutemps() {
         console.log(`Jours : ${inputs.jours} ; filieres: ${inputs.filieres} ; description : ${inputs.niveau} ; `);
 
         try {
-            const response = await axios.put('http://localhost/api/index.php', inputs);
+            const response = await axios.post('http://localhost/api/index.php/updateEmplois', inputs);
             console.log('reponse ', response.data);
             // navigate("/evenement");
         } catch (error) {
@@ -77,6 +77,7 @@ export default function Modifemploidutemps() {
                                             onChange={handleChange}
                                             required
                                         >
+                                            <option>Jours de la semaine</option>
                                             <option value="lundi">Lundi</option>
                                             <option value="mardi">Mardi</option>
                                             <option value="mercredi">Mercredi</option>

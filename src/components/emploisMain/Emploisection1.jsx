@@ -4,6 +4,7 @@ import Emploisecion1datas from '../../data/Emploisecion1data';
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import UserProvider from '../../hooks/UserProvider'
+// import image1 from  "./image/connexion/deco1.png"
 export default function Emploisection1() {
     const {annee,filiere}=useParams()
     const [filieres, setFiliere] = useState(Emploisecion1datas)
@@ -26,6 +27,7 @@ export default function Emploisection1() {
                     <div className={`${s.titre} `}>
                         <h2>Liste des emploi du temps</h2>
                     </div>
+                    <image1  />
 
                     <div className={`${s.box_content} `}>
                         <div className={`${s.content_soratra} `}>
@@ -37,7 +39,7 @@ export default function Emploisection1() {
                             filieres.map((item, index) => (
                                 <div className={`${s.categorie_sary} `} key={index}>
                                     <div className={`${s.box_sary} flex-col`}>
-                                        <img className={`${s.image}`} src={`image/icone/${item.sary}.png`} alt="" />
+                                        <img className={`${s.image}`} src={`/image/icone/${item.sary}.png`} alt="" />
                                         <div className={`${s.box_text_image}`}>
                                             <h3>{item.name}</h3>
                                             <h4 className={`${s.classe}`}>{item.classe}</h4> 

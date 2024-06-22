@@ -12,7 +12,7 @@ $db = new Database();
 
 $method = $_SERVER['REQUEST_METHOD'];
 
-// echo strlen($_SERVER['REQUEST_URI'])
+// echo strlen($_SERVER['REQUEST_URI']);
 
 $user =json_decode(file_get_contents('php://input'));
 
@@ -24,6 +24,9 @@ switch ($method) {
 
             if($key == 'newEvent'){
                 $response = json_encode($db->test(['message' => 'successful'],$db->newEvent($user->titre, $user->date, $user->description)));
+            }else if($key == 'updateEmplois'){
+
+                $response = json_encode($db->test(['message'=> 'succes'], $db->UpdateSchedule($user->jours, $user->filieres, $user->niveau, $user->matiere1, $user->matiere2, $user->matiere3, $user->matiere4)));
             }else{
 
                 $response = json_encode($db->test(['message'=> 'successful'],$db->login($user->name, $user->firstname,$user->email, $user->date, $user->filiere, $user->password)));
@@ -63,13 +66,9 @@ switch ($method) {
 
         echo json_encode($response);
         break;
-    case "PUT":
+    case "DELETE":
     
-            if($db->UpdateSchedule('lundi', 1,'L1', $user->matiere1, $user->matiere2, $user->matiere3, $user->matiere4)){
-                $response = -["succes"=>1];
-            }else{
-                $response =[ "erreur"=>0];
-
-            }
+         $id = end(explode('/', $_SERVER['REQUEST_URI']));
+            $response = $db->test(['message'=>'succes'], $db->deleteByID($id));
         echo json_encode($response); 
 }

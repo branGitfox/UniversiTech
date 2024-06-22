@@ -5,16 +5,30 @@ import Header from '../../components/header/Header';
 import Sidebar from '../../components/sidebar/Sidebar';
 import Basheader from '../../components/basheader/Basheader';
 import Eventsection1 from '../../components/evenementMain/Eventsection1';
-
-
+import axios from 'axios';
+import { useNavigate } from 'react-router';
 
 export default function Event() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [pubs, setPubs] = useState([]); 
+  const[delid, setDelid] =useState()
+  const Navigate = useNavigate()
 
+
+
+useEffect(() =>{
+    axios.delete('http://localhost/api/index.php/'+delid).then(response =>{
+        console.log(response.data);
+       
+    }) 
+    Navigate('/evenement') 
+}, [delid])
+
+  
+  
   useEffect(() => {
     getEvents()
-  }, [])
+  }, [delid])
 
   const getEvents = async () => {
     const res = await fetch("http://localhost/api/index.php/events")  
@@ -42,7 +56,7 @@ export default function Event() {
           {
             pubs.map((event, index) => (
               <div key={index} className={`${s.section1}`}>
-                  <Eventsection1 key={event.id} ev={event} />
+                  <Eventsection1 key={event.id} ev={event} setid={setDelid}/>
              </div>
           
             ))
