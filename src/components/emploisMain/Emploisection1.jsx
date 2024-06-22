@@ -4,6 +4,9 @@ import Emploisecion1datas from '../../data/Emploisecion1data';
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import UserProvider from '../../hooks/UserProvider'
+
+import { IoMdAddCircle } from "react-icons/io";
+
 // import image1 from  "./image/connexion/deco1.png"
 export default function Emploisection1() {
     const { annee, filiere } = useParams()
@@ -26,7 +29,10 @@ export default function Emploisection1() {
                 {/* Section droite: formulaire de login */}
                 <div className={`${s.content} w-full md:w-2/2 flex flex-col justify-center items-center`}>
                     <div className={`${s.titre} `}>
-                        {userData.name === 'Admin' ? <button><Link to="/modifemploidutemps"> Ajouter un emploi du temps</Link></button> : <h2>Liste des emplois du temps</h2>}
+                        {userData.name === 'Admin' ? <button className={`${s.btnajout} flex`}>
+                        <Link to="/modifemploidutemps"> Ajouter un emploi du temps</Link>
+                        <IoMdAddCircle  size={30}/></button>
+                         : <h2>Liste des emplois du temps</h2>}
                     </div>
                     <image1 />
 

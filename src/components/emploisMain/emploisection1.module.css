@@ -101,3 +101,14 @@
             display: none;
           }
     }
+
+    .btnajout{
+        color: white  ;
+        text-align: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .btnajout:hover{
+        transition: ;
+    }
