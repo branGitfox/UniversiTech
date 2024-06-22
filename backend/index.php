@@ -68,7 +68,10 @@ switch ($method) {
         break;
     case "DELETE":
     
-         $id = end(explode('/', $_SERVER['REQUEST_URI']));
-            $response = $db->test(['message'=>'succes'], $db->deleteByID($id));
+         $id =explode('/', $_SERVER['REQUEST_URI']);
+         $trueId = end($id);
+
+            $response = $db->test(['message'=>'succes'], $db->deleteByID($trueId));
         echo json_encode($response); 
+        break;
 }
