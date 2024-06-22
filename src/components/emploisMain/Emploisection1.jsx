@@ -30,7 +30,7 @@ export default function Emploisection1() {
                 <div className={`${s.content} w-full md:w-2/2 flex flex-col justify-center items-center`}>
                     <div className={`${s.titre} `}>
                         {userData.name === 'Admin' ? <button className={`${s.btnajout} flex`}>
-                        <Link to="/modifemploidutemps"> Ajouter un emploi du temps</Link>
+                        <Link  className={`${s.btnajout} `} to="/modifemploidutemps"> Ajouter un emploi du temps</Link>
                         <IoMdAddCircle  size={30}/></button>
                          : <h2>Liste des emplois du temps</h2>}
                     </div>

@@ -107,8 +107,11 @@
         text-align: center;
         align-items: center;
         gap: 1rem;
+        transition: 0.5s;
     }
 
     .btnajout:hover{
-        transition: ;
+        color: white    ;
+        transform: scale(1.1);
+        transition:0.5s ;
     }
